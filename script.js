@@ -38,7 +38,7 @@
         
         for (var key in msg) {
             console.log(msg);
-            if msg.hasOwnProperty(key) {
+            if (msg.hasOwnProperty(key)) {
                         var row = tableRef.insertRow(tableRef.rows.length);
                         var cell1 = row.insertCell(0);
                         var cell2 = row.insertCell(1);
