@@ -27,11 +27,13 @@
         logInfoMsg("ContactID is " + contact.getContactId());   
         logInfoMsg("Contact attributes are " + JSON.stringify(contact.getAttributes()));
         
+          console.log("trying to call update contact");
         updateContactAttribute(contact.getAttributes());    
         contact.onEnded(clearContactAttribute);
     }
 
     function updateContactAttribute(msg){
+        console.log("trying to update");
         JIRAlink.innerHTML ='<a href ="https://jira.naic.org/issues/?jql=project%20%3D%20%22NIPRSD%22%20AND%20assignee%20is%20EMPTY%20AND%20summary%20~%20%22'+contact.getContactId()+'%22%20AND%20created%20%3E%20startOfDay()%20AND%20created%20%3C%20endOfDay()" target="_blank" class="jiraLink"> JIRA cases </a>';
         
         var tableRef = document.getElementById('attributesTable').getElementsByTagName('tbody')[0];      
