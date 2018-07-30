@@ -29,7 +29,7 @@
         
       
         updateContactAttribute(contact.getAttributes());   
-        updateJIRAlink();
+        updateJIRAlink(contact.getInitialConnection().getEndpoint());
         contact.onEnded(clearContactAttribute);
     }
 
@@ -50,8 +50,9 @@
         }
         
  
-    function updateJIRAlink(){
-                JIRAlink.innerHTML ='<a href ="https://jira.naic.org/issues/?jql=project%20%3D%20%22NIPRSD%22%20AND%20assignee%20is%20EMPTY%20AND%20summary%20~%20%22'+contact.getContactId()+'%22%20AND%20created%20%3E%20startOfDay()%20AND%20created%20%3C%20endOfDay()" target="_blank" class="jiraLink"> JIRA cases </a>';
+    function updateJIRAlink(customerEndpoint){
+        var link = document.getElementById('JIRAlink');
+                link.innerHTML ='<a href ="https://jira.naic.org/issues/?jql=project%20%3D%20%22NIPRSD%22%20AND%20assignee%20is%20EMPTY%20AND%20summary%20~%20%22'+customerEndpoint.phoneNumber+'%22%20AND%20created%20%3E%20startOfDay()%20AND%20created%20%3C%20endOfDay()" target="_blank" class="jiraLink"> JIRA cases </a>';
     }
 
 
