@@ -20,6 +20,7 @@
         if (contact.getActiveInitialConnection()
             && contact.getActiveInitialConnection().getEndpoint()) {
             logInfoMsg("New contact is from " + contact.getActiveInitialConnection().getEndpoint().phoneNumber);
+            clearContactAttribute();
         } else {
             logInfoMsg("This is an existing contact for this agent");
         }
