@@ -20,7 +20,7 @@
         if (contact.getActiveInitialConnection()
             && contact.getActiveInitialConnection().getEndpoint()) {
             logInfoMsg("New contact is from " + contact.getActiveInitialConnection().getEndpoint().phoneNumber);
-            clearContactAttribute();
+          //  clearContactAttribute();
         } else {
             logInfoMsg("This is an existing contact for this agent");
         }
@@ -31,7 +31,7 @@
       
         updateContactAttribute(contact.getAttributes());   
         updateJIRAlink(contact.getInitialConnection().getEndpoint());
-     //   contact.onEnded(clearContactAttribute);
+       contact.onEnded(clearContactAttribute);
     }
 
     function updateContactAttribute(msg){
