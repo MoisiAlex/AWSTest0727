@@ -30,7 +30,7 @@
       
         updateContactAttribute(contact.getAttributes());   
         updateJIRAlink(contact.getInitialConnection().getEndpoint());
-        contact.onEnded(clearContactAttribute);
+     //   contact.onEnded(clearContactAttribute);
     }
 
     function updateContactAttribute(msg){
